@@ -19,8 +19,9 @@
 
 - [ ] What is the purpose of a custom hook?
 
-        kjkj
+        Custom hooks are ment as mechanisms that reuse stateful logic.
 
 - [ ] Why is it important to test our apps?
 
-        kdjf
+        So that when the app is finished we know that the application will work 
+        properly. We know that it will not break because of programmer error.
