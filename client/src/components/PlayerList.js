@@ -1,18 +1,19 @@
-import React from 'react';
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles({
-    list: {
-        color: 'purple',
-    },
-});
+import React from "react";
+import Player from "./Player";
+import Container from "@material-ui/core/Container";
 
 const PlayerList = props => {
-    return (
-        <div>
+  const { playerData } = props;
 
-        </div>
-    );
+  return (
+    <div>
+      <Container>
+        {playerData.map(person => {
+          return <Player key={person.id} player={person} />;
+        })}
+      </Container>
+    </div>
+  );
 };
 
 export default PlayerList;

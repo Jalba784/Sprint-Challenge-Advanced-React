@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./App.css";
+import PlayerList from "./components/PlayerList";
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class App extends Component {
     axios
       .get("http://localhost:5000/api/players")
       .then(res => {
-        this.setState(res.data);
+        // this.setState(res.data);
+        this.setState({data: res.data});
       })
       .catch(err => {
         console.log("Error: ", err);
@@ -22,8 +24,11 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        <PlayerList playerData={this.state.data} />
+      </div>
+    )
   }
 }
 
