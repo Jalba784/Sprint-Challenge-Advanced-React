@@ -8,7 +8,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   card: {
     maxWidth: 300,
-    margin: 10,
+    margin: 10
   }
 });
 
@@ -27,7 +27,7 @@ const Player = props => {
         <CardContent>
           <Typography variant="body2" component="p">
             Country:
-            <br/>
+            <br />
             {player.country}
           </Typography>
         </CardContent>
