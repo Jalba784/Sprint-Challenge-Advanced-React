@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import { useAxios } from "../utils/useAxios";
 import Player from "./Player";
 import { makeStyles } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
@@ -19,24 +19,13 @@ const useStyles = makeStyles({
 const PlayerList = () => {
   const classes = useStyles();
   const { cont } = classes;
-  const [player, setPlayer] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/players")
-      .then(res => {
-        setPlayer(res.data);
-      })
-      .catch(err => {
-        console.log("Error: ", err);
-      });
-  }, [player]);
-
+  const [info] = useAxios();
+  console.log(info);
 
   return (
     <div>
       <Container className={cont}>
-        {player.map(person => {
+        {info.map(person => {
           return <Player key={person.id} player={person} />;
         })}
       </Container>
